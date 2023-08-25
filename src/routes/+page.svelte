@@ -1,4 +1,5 @@
 <script lang="ts">
+	import StateInfo from '$lib/components/StateInfo.svelte';
 	import StatePicker from '$lib/components/StatePicker.svelte';
 	import type { PageData } from './$types';
 
@@ -28,11 +29,26 @@
 	// we shouldnt need any static files as we will call everything from SupaBase
 </script>
 
-<h1>Root Route - This will be main page</h1>
-<a href="/login">Click Here for Login</a>
+<!-- <div class="h-full w-full flex items-center flex-wrap justify-center">
+	<div class="flex flex-row flex-nowrap justify-center w-full py-4 border border-red-500">
+		<div class="px-2">
+			<StatePicker bind:activeState />
+		</div>
+		<div class="max-w-2xl">
+			<StateInfo bind:activeState />
+		</div>
+		<!-- <div class="w-40 border border-green-500">Box 1</div>
+		<div class="w-40 border border-blue-500">Box 2</div> -->
+<!-- </div>
+</div>  -->
 
-<p>Here is the activeState: {JSON.stringify(activeState)}</p>
-
-<div>
-	<StatePicker bind:activeState />
+<div class="h-full w-full justify-center">
+	<div class="grid grid-cols-5 mt-3 items-center">
+		<div class="col-span-2">
+			<StatePicker bind:activeState />
+		</div>
+		<div class="max-w-3xl col-span-3">
+			<StateInfo bind:activeState />
+		</div>
+	</div>
 </div>

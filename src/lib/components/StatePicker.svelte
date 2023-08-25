@@ -35,7 +35,7 @@
 		align-items: center;
 		flex-direction: column;
 		margin: auto;
-		height: 30vh;
+		height: 10vh;
 		width: 20vw;
 		background-color: rgb(243, 243, 243);
 		border: 1px solid darkgrey;
