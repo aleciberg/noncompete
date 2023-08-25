@@ -55,13 +55,13 @@
 </script>
 
 <div
-	class="w-150 mr-10 h-50 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+	class="w-[700px] h-[600px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
 >
 	<a href="#">
 		<!-- <img class="rounded-t-lg" src="state_flags/{activeState.state_name}.png" alt="" /> -->
 		<Img
 			src="state_flags/{activeState.state_name}.png"
-			class="rounded-lg"
+			class="w-[700px] h-[400px]"
 			imgClass="h-30 max-h-30 min-h-30 w-30 max-w-30 min-w-30"
 		/>
 	</a>
@@ -98,3 +98,6 @@
 		</a>
 	</div>
 </div>
+
+<style>
+</style>
