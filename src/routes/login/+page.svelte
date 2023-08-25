@@ -12,9 +12,10 @@
 
 <div class="row flex-center flex">
 	<div class="col-6 form-widget">
+		<!-- TODO: switch this to email/password login -->
 		<Auth
 			supabaseClient={data.supabase}
-			view="sign_in"
+			view="magic_link"
 			redirectTo={`${data.url}/auth/callback`}
 			showLinks={false}
 			appearance={{ theme: ThemeSupa, style: { input: 'color: black' } }}

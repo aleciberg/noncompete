@@ -1,10 +1,11 @@
 <script lang="ts">
 	import StateInfo from '$lib/components/StateInfo.svelte';
 	import StatePicker from '$lib/components/StatePicker.svelte';
+	import type { State } from '../types';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-	export let { activeState } = data;
+	export let { activeState }: { activeState: State } = data;
 
 	// time to start planning because i didn't plan out the last one and its very messy and unorganized
 
