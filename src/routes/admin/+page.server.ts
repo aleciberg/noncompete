@@ -3,8 +3,6 @@ import { fail, redirect } from '@sveltejs/kit';
 export const load = async ({ locals: { supabase, getSession } }) => {
 	const session = await getSession();
 
-	console.log(JSON.stringify(session));
-
 	if (!session) {
 		throw redirect(303, '/');
 	}

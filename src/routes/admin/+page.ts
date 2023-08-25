@@ -1,18 +1,12 @@
-import type { PageLoad } from '../$types';
+import type { PageLoad } from './$types';
+import { supabase } from '$lib/supabaseClient';
+import type { State } from '../../types';
 
-export const load: PageLoad = ({ params }) => {
-	// we will want to load with the first state - Alabama
-	// in future we can load their local state or some shit
-
-	return {
-		activeState: {
-			id: 2,
-			state_name: 'Alabama',
-			noncompete_length: '2 Years',
-			date_passed: '11/09/1991',
-			law_code: '123.46',
-			sources: 'abah',
-			writeup: 'abah'
-		}
-	};
+export const load: PageLoad = async ({ params }) => {
+	let res = await supabase.from('states').select('*').eq('state_name', 'Alabama');
+	if (res.data === null) {
+		throw new Error('Something is broken');
+	}
+	const initStateData: State = res.data[0];
+	return { activeState: initStateData };
 };

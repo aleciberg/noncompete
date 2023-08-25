@@ -3,6 +3,7 @@
 	import '../app.css';
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
+	import { SvelteToast } from '@zerodevx/svelte-toast';
 
 	export let data;
 
@@ -18,6 +19,8 @@
 
 		return () => data.subscription.unsubscribe();
 	});
+
+	const options = {};
 </script>
 
 <svelte:head>
@@ -25,6 +28,7 @@
 </svelte:head>
 
 <div class="main-container overscroll-auto h-full w-full mb-20">
+	<SvelteToast {options} />
 	<div class="w-fullfixed text-2xl font-medium">
 		<a class="underline" href="/">Home</a>
 		<a class="underline" href="/login">Admin</a>

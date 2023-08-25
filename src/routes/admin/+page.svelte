@@ -27,7 +27,7 @@
 
 	const updateHandler = async (e: any) => {
 		const { stateData } = e.detail;
-
+		console.log(stateData);
 		const { data, error } = await supabase
 			.from('states')
 			.update({
@@ -37,7 +37,7 @@
 				law_code: stateData.flawcode,
 				sources: stateData.fsources
 			})
-			.eq('state_name', activeState)
+			.eq('state_name', activeState.state_name)
 			.select();
 
 		if (error) {
@@ -49,8 +49,8 @@
 				}
 			});
 		}
-
 		if (data) {
+			console.log('why isnt this working');
 			toast.push('Success!', {
 				theme: {
 					'--toastColor': 'mintcream',
@@ -78,7 +78,7 @@
 				<StatePicker bind:activeState />
 			</div>
 			<div class="col-span-3">
-				<StateEditor bind:activeState />
+				<StateEditor on:update={updateHandler} bind:activeState />
 			</div>
 		</div>
 	</div>
