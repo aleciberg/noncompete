@@ -47,7 +47,7 @@
 		<div class="col-span-2">
 			<StatePicker bind:activeState />
 		</div>
-		<div class="max-w-3xl col-span-3">
+		<div class="col-span-3">
 			<StateInfo bind:activeState />
 		</div>
 	</div>
