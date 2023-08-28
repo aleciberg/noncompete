@@ -30,20 +30,7 @@
 	// we shouldnt need any static files as we will call everything from SupaBase
 </script>
 
-<!-- <div class="h-full w-full flex items-center flex-wrap justify-center">
-	<div class="flex flex-row flex-nowrap justify-center w-full py-4 border border-red-500">
-		<div class="px-2">
-			<StatePicker bind:activeState />
-		</div>
-		<div class="max-w-2xl">
-			<StateInfo bind:activeState />
-		</div>
-		<!-- <div class="w-40 border border-green-500">Box 1</div>
-		<div class="w-40 border border-blue-500">Box 2</div> -->
-<!-- </div>
-</div>  -->
-
-<div class="h-full w-full justify-center">
+<!--  <div class="h-full w-full justify-center">
 	<div class="grid grid-cols-5 mt-3 items-center">
 		<div class="col-span-2">
 			<StatePicker bind:activeState />
@@ -51,5 +38,14 @@
 		<div class="col-span-3">
 			<StateInfo bind:activeState />
 		</div>
+	</div>
+</div> -->
+
+<div class="border border-red-500 flex flex-wrap flex-gap overscroll-none">
+	<div class="basis-1/3 border border-blue-500 self-center">
+		<StatePicker bind:activeState />
+	</div>
+	<div class="basis-2/3 grow border border-green-500">
+		<StateInfo bind:activeState />
 	</div>
 </div>
