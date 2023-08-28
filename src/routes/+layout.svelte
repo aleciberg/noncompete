@@ -24,7 +24,7 @@
 </script>
 
 <svelte:head>
-	<title>User Management</title>
+	<title>Non Compete Agreement Lengths</title>
 </svelte:head>
 
 <div class="main-container overscroll-auto h-full w-full mb-20">
