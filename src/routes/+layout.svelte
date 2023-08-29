@@ -27,14 +27,14 @@
 	<title>Non Compete Agreement Lengths</title>
 </svelte:head>
 
-<div class="main-container overscroll-auto h-full w-full mb-20">
+<div class="main-container overscroll-none h-screen w-full mb-20 border border-red-600">
 	<SvelteToast {options} />
-	<div class="w-fullfixed text-2xl font-medium">
+	<div class="w-fullfixed text-md font-xs flex justify-end space-x-2">
 		<a class="underline" href="/">Home</a>
 		<a class="underline" href="/login">Admin</a>
 	</div>
 	<slot />
-	<footer class="fixed inset-x-0 bottom-0 text-sm font-thin">
+	<footer class="fixed inset-x-0 bottom-0 text-sm font-thin flex justify-end space-x-2">
 		<p>Made with ♥ by Alec Iberg, Jordan Melvin, and Brennen Yaquinto</p>
 	</footer>
 </div>

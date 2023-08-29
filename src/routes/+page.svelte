@@ -1,6 +1,7 @@
 <script lang="ts">
+	import { SvelteToast } from '@zerodevx/svelte-toast';
 	import StateInfo from '$lib/components/StateInfo.svelte';
-	import StatePicker from '$lib/components/StatePicker.svelte';
+	import StateList from '$lib/components/StateList.svelte';
 	import type { State } from '../types';
 	import type { PageData } from './$types';
 
@@ -28,24 +29,29 @@
 
 	// static
 	// we shouldnt need any static files as we will call everything from SupaBase
+
+	// <!-- <div class="border border-red-500 flex flex-wrap flex-gap">
+	// 	<div class="basis-1/3 border border-blue-500 self-center">
+	// 		<StatePicker bind:activeState />
+	// 	</div>
+	// 	<div class="basis-2/3 grow border border-green-500">
+	// 		<StateInfo bind:activeState />
+	// 	</div>
+	// </div> -->
+
+	const options = {};
 </script>
 
-<!--  <div class="h-full w-full justify-center">
-	<div class="grid grid-cols-5 mt-3 items-center">
-		<div class="col-span-2">
-			<StatePicker bind:activeState />
+<div class="flex overscroll-none">
+	<SvelteToast {options} />
+	<div class="h-screen w-1/5 text-2xl font-medium">
+		<div class="h-full">
+			<StateList bind:activeState />
 		</div>
-		<div class="col-span-3">
+	</div>
+	<div class="h-full w-4/5 flex items-center justify-center">
+		<div class="">
 			<StateInfo bind:activeState />
 		</div>
-	</div>
-</div> -->
-
-<div class="border border-red-500 flex flex-wrap flex-gap overscroll-none">
-	<div class="basis-1/3 border border-blue-500 self-center">
-		<StatePicker bind:activeState />
-	</div>
-	<div class="basis-2/3 grow border border-green-500">
-		<StateInfo bind:activeState />
 	</div>
 </div>

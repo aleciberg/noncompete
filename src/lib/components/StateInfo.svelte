@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class="w-[700px] h-700px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+	class="w-[700px] h-[700px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
 >
 	<a href="#">
 		<!-- <img class="rounded-t-lg" src="state_flags/{activeState.state_name}.png" alt="" /> -->
