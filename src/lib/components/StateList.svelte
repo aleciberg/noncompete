@@ -6,7 +6,7 @@
 	export let activeState: State;
 
 	const clickHandler = async (s: string) => {
-		let data = await supabase.from('states').select('*').eq('state_name', s);
+		let data = await supabase.from('states2').select('*').eq('state_name', s);
 		if (data.data == undefined) {
 			console.error('Error in updating active state');
 		} else {

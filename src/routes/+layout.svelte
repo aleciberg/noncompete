@@ -27,7 +27,7 @@
 	<title>Non Compete Agreement Lengths</title>
 </svelte:head>
 
-<div class="main-container overscroll-none h-screen w-full mb-20 border border-red-600">
+<div class="main-container overscroll-none h-screen w-full mb-20">
 	<SvelteToast {options} />
 	<div class="w-fullfixed text-md font-xs flex justify-end space-x-2">
 		<a class="underline" href="/">Home</a>

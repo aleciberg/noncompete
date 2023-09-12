@@ -6,7 +6,7 @@
 	let selected = activeState.state_name;
 
 	const stateChanger = async () => {
-		let data = await supabase.from('states').select('*').eq('state_name', selected);
+		let data = await supabase.from('states2').select('*').eq('state_name', selected);
 		if (data.data == undefined) {
 			console.error('Error in updating active state');
 		} else {

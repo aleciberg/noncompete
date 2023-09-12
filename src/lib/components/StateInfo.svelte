@@ -9,7 +9,6 @@
 	class="w-[700px] h-[700px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
 >
 	<a href="#">
-		<!-- <img class="rounded-t-lg" src="state_flags/{activeState.state_name}.png" alt="" /> -->
 		<Img
 			src="state_flags/{activeState.state_name}.png"
 			class="w-[700px] h-[400px]"
@@ -23,19 +22,13 @@
 			</h5>
 		</a>
 		<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-			{activeState.writeup}
-		</p>
-		<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-			NonCompete Agreement Length: {activeState.noncompete_length} years
+			Enforceable Non-Compete? {activeState.enforce_nc}
 		</p>
 		<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
 			Law Code: {activeState.law_code}
 		</p>
 		<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-			Date Passed: {activeState.date_passed}
-		</p>
-		<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-			Sources: {activeState.sources}
+			{activeState.writeup}
 		</p>
 		<a
 			href="#"

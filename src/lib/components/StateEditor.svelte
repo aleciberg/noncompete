@@ -34,23 +34,13 @@
 			/>
 		</div>
 		<div>
-			<label for="flength">Noncompete Length</label>
+			<label for="flawcode">Enforceable Non Compete?</label>
 			<input
 				type="text"
-				id="flength"
-				name="flength"
-				value={activeState.noncompete_length}
-				placeholder={activeState.noncompete_length}
-			/>
-		</div>
-		<div>
-			<label for="fdate">Date Passed</label>
-			<input
-				type="text"
-				id="fdate"
-				name="fdate"
-				value={activeState.date_passed}
-				placeholder={activeState.date_passed}
+				id="flawcode"
+				name="flawcode"
+				value={activeState.enforce_nc}
+				placeholder={activeState.enforce_nc}
 			/>
 		</div>
 		<div>
@@ -64,20 +54,13 @@
 			/>
 		</div>
 		<div>
-			<label for="fsources">Sources</label>
-			<!-- <input
+			<label for="flawcode">Blue Pencil Provision</label>
+			<input
 				type="text"
-				id="fsources"
-				name="fsources"
-				value={activeState.sources}
-				placeholder={activeState.sources}
-			/> -->
-			<textarea
-				rows="5"
-				cols="40"
-				name="fsources"
-				placeholder={activeState.sources}
-				value={activeState.sources}
+				id="flawcode"
+				name="flawcode"
+				value={activeState.blue_pencil_provision}
+				placeholder={activeState.blue_pencil_provision}
 			/>
 		</div>
 		<div>
