@@ -1,14 +1,21 @@
-// src/routes/+page.server.ts
-import { redirect } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
+import { supabase } from '$lib/supabaseClient';
+import type { Actions } from './$types';
 
-export const load: PageServerLoad = async ({ url, locals: { getSession } }) => {
-	const session = await getSession();
+// export const actions = {
+// 	login: async (event) => {
+// 		const data = await event.request.formData();
+// 		const email = data.get('email');
+// 		const password = data.get('password');
+// 		signInWithEmail(email, password);
+// 	}
+// } satisfies Actions;
 
-	// if the user is already logged in return them to the account page
-	if (session) {
-		throw redirect(303, '/admin');
-	}
-
-	return { url: url.origin };
-};
+// // need to post to sign up with form data
+// // what is the return?  But I believe we need to check session in layout
+// async function signInWithEmail(e: any, p: any) {
+// 	const { data, error } = await supabase.auth.signInWithPassword({
+// 		email: e,
+// 		password: p
+// 	});
+// 	return data.session;
+// }

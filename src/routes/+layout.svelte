@@ -31,7 +31,11 @@
 	<SvelteToast {options} />
 	<div class="w-fullfixed text-md font-xs flex justify-end space-x-2">
 		<a class="underline" href="/">Home</a>
-		<a class="underline" href="/login">Admin</a>
+		{#if session}
+			<a class="underline" href="/admin">Dashboard</a>
+		{:else}
+			<a class="underline" href="/login">Admin</a>
+		{/if}
 	</div>
 	<slot />
 	<footer class="fixed inset-x-0 bottom-0 text-sm font-thin flex justify-end space-x-2">

@@ -1,9 +1,30 @@
 <!-- src/routes/+page.svelte -->
 <script lang="ts">
-	import { Auth } from '@supabase/auth-ui-svelte';
-	import { ThemeSupa } from '@supabase/auth-ui-shared';
+	import { goto } from '$app/navigation';
+	import { redirect } from '@sveltejs/kit';
 
 	export let data;
+	let { supabase, session } = data;
+	$: ({ supabase, session } = data);
+
+	let email: string;
+	let password: string;
+
+	// TODO get rid of the whole fucking auth route i dont need something that complicated
+	const handleSignIn = async () => {
+		try {
+			let res = await supabase.auth.signInWithPassword({
+				email,
+				password
+			});
+			if (res.data.session != null) {
+				goto('/admin');
+			}
+		} catch (error) {
+			console.log('in catch somehow');
+			console.log(error);
+		}
+	};
 </script>
 
 <svelte:head>
@@ -11,15 +32,15 @@
 </svelte:head>
 
 <div class="row flex-center flex">
-	<div class="col-6 form-widget">
-		<!-- TODO: switch this to email/password login -->
-		<Auth
-			supabaseClient={data.supabase}
-			view="magic_link"
-			redirectTo={`${data.url}/auth/callback`}
-			showLinks={false}
-			appearance={{ theme: ThemeSupa, style: { input: 'color: black' } }}
-			additionalData={{ Auth: true }}
+	<form on:submit={handleSignIn}>
+		<input class="border border-black-100" name="email" placeholder="email" bind:value={email} />
+		<input
+			class="border border-black-100"
+			type="password"
+			name="password"
+			placeholder="password"
+			bind:value={password}
 		/>
-	</div>
+		<button>Sign In</button>
+	</form>
 </div>

@@ -13,6 +13,8 @@ export const load = async ({ fetch, data, depends }) => {
 		serverSession: data.session
 	});
 
+	// need a handler here to grab session and determine logged in or not
+
 	const {
 		data: { session }
 	} = await supabase.auth.getSession();
