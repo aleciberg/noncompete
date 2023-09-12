@@ -39,6 +39,6 @@
 	</div>
 	<slot />
 	<footer class="fixed inset-x-0 bottom-0 text-sm font-thin flex justify-end space-x-2">
-		<p>Made with ♥ by Alec Iberg, Jordan Melvin, and Brennen Yaquinto</p>
+		<p>Made with ♥ by Alec Iberg & Jordan Melvin</p>
 	</footer>
 </div>
