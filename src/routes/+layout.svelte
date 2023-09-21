@@ -27,7 +27,7 @@
 	<title>Non Compete Agreement Lengths</title>
 </svelte:head>
 
-<div class="main-container overscroll-none h-screen w-full mb-20">
+<div class="overscroll-none h-full w-full">
 	<SvelteToast {options} />
 	<div class="w-fullfixed text-md font-xs flex justify-end space-x-2">
 		<a class="underline" href="/">Home</a>
@@ -38,7 +38,7 @@
 		{/if}
 	</div>
 	<slot />
-	<footer class="fixed inset-x-0 bottom-0 text-sm font-thin flex justify-end space-x-2">
+	<div class="w-full text-md flex justify-end">
 		<p>Made with ♥ by Alec Iberg & Jordan Melvin</p>
-	</footer>
+	</div>
 </div>

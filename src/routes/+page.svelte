@@ -44,13 +44,13 @@
 
 <div class="flex overscroll-none">
 	<SvelteToast {options} />
-	<div class="h-screen w-1/5 text-2xl font-medium">
-		<div class="h-full">
+	<div class="h-full w-1/5 text-2xl font-medium">
+		<div class="h-full mr-2">
 			<StateList bind:activeState />
 		</div>
 	</div>
 	<div class="h-full w-4/5 flex items-center justify-center">
-		<div class="">
+		<div class="h-full">
 			<StateInfo bind:activeState />
 		</div>
 	</div>

@@ -22,7 +22,7 @@
 			<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 			<li
 				class={activeState.state_name === state
-					? 'text-md cursor-pointer italic text-center'
+					? 'text-md cursor-pointer italic text-center text-[#4e83a2]'
 					: 'text-md cursor-pointer text-center'}
 				on:click={() => clickHandler(state)}
 			>
