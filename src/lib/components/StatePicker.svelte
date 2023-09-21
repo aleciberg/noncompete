@@ -15,8 +15,8 @@
 	};
 </script>
 
-<div class="select-container">
-	<h1>Select a State</h1>
+<div class="flex flex-col w-full justify-center items-center">
+	<h1 class="text-[#4e83a2]">Select a State</h1>
 	<span>
 		<select bind:value={selected} on:change={stateChanger}>
 			{#each STATES as state}
@@ -29,7 +29,7 @@
 </div>
 
 <style>
-	.select-container {
+	/* .select-container {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -47,5 +47,5 @@
 		width: 200px;
 		height: 35px;
 		font-size: 18px;
-	}
+	} */
 </style>
