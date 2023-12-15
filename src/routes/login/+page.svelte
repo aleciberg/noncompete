@@ -12,7 +12,7 @@
 
 <div class="row flex-center flex">
 	<Auth
-		supabaseClient={data.supabase}
+		supabaseClient={supabase}
 		view="sign_in"
 		redirectTo={`${data.url}/auth/callback`}
 		showLinks={false}
