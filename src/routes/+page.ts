@@ -1,8 +1,10 @@
 import type { PageLoad } from './$types';
-import { supabase } from '$lib/supabaseClient';
 import type { State } from '../types';
 
-export const load: PageLoad = async (data) => {
+export const load: PageLoad = async ({ parent }) => {
+	const data = await parent();
+	const { supabase } = data;
+	console.log(JSON.stringify(data));
 	let res = await supabase.from('states2').select('*').eq('state_name', 'Alabama');
 	if (res.data === null) {
 		console.log(res);
