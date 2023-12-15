@@ -1,17 +1,14 @@
 <script lang="ts">
 	import { STATES } from '$lib/constants';
 	import type { State } from '../../types';
-	import { supabase } from '$lib/supabaseClient';
+	import { createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher();
 
 	export let activeState: State;
 
-	const clickHandler = async (s: string) => {
-		let data = await supabase.from('states2').select('*').eq('state_name', s);
-		if (data.data == undefined) {
-			console.error('Error in updating active state');
-		} else {
-			activeState = data.data[0];
-		}
+	const clickHandler = async (state: string) => {
+		dispatch('handleChange', state);
 	};
 </script>
 

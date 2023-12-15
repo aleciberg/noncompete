@@ -1,24 +1,21 @@
 <script lang="ts">
 	import { STATES } from '$lib/constants';
-	import { supabase } from '$lib/supabaseClient';
+	import { createEventDispatcher } from 'svelte';
 
 	export let activeState;
 	let selected = activeState.state_name;
 
-	const stateChanger = async () => {
-		let data = await supabase.from('states2').select('*').eq('state_name', selected);
-		if (data.data == undefined) {
-			console.error('Error in updating active state');
-		} else {
-			activeState = data.data[0];
-		}
+	const dispatch = createEventDispatcher();
+
+	const stateChanger = async (state: string) => {
+		dispatch('handleChange', state);
 	};
 </script>
 
 <div class="flex flex-col w-full justify-center items-center">
 	<h1 class="text-[#4e83a2]">Select a State</h1>
 	<span>
-		<select bind:value={selected} on:change={stateChanger}>
+		<select bind:value={selected} on:change={() => stateChanger(selected)}>
 			{#each STATES as state}
 				<option value={state}>
 					{state}
