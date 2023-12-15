@@ -1,4 +1,7 @@
 // src/hooks.server.ts
+// first thing that runs on server once front end loads app
+// cannot load data to front end from here
+// can instantiate data here for use across entire app (event.locals.supabase)
 import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public';
 import { createSupabaseServerClient } from '@supabase/auth-helpers-sveltekit';
 import type { Handle } from '@sveltejs/kit';

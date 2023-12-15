@@ -1,4 +1,5 @@
 // src/routes/+layout.ts
+// this file runs on the front end, so do not put sesnsitive info here
 import { invalidate } from '$app/navigation';
 import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public';
 import { createSupabaseLoadClient } from '@supabase/auth-helpers-sveltekit';
@@ -12,8 +13,6 @@ export const load = async ({ fetch, data, depends }) => {
 		event: { fetch },
 		serverSession: data.session
 	});
-
-	// need a handler here to grab session and determine logged in or not
 
 	const {
 		data: { session }
